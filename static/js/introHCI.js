@@ -20,6 +20,7 @@ function initializePage() {
 	$("a.thumbnail").click(projectClick);
 	$("#submitBtn").click(changeWidth);
 }
+	
 function projectClick(e) {
 	// prevent the page from reloading
 	e.preventDefault();
@@ -31,11 +32,13 @@ function projectClick(e) {
 
 	var containingProject = $(this).closest(".project");
     var description = $(containingProject).find(".project-description");
-    if (description.length == 0) { 
-       $(containingProject).append("<div class='project-description'><p>Description of the project.</p></div>"); 
-    } else {
+
+    if (description.length == 0) {
+       $(containingProject).append("<div class='project-description'><p>Description of the project.</p></div>");
+    } else{
     	$(description).fadeOut();
     }
+
 }
 
 function changeWidth(e){
