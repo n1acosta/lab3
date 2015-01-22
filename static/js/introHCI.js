@@ -18,6 +18,7 @@ function initializePage() {
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
 	$("a.thumbnail").click(projectClick);
+	$("#submitBtn").click(changeWidth);
 }
 function projectClick(e) {
 	// prevent the page from reloading
@@ -35,4 +36,14 @@ function projectClick(e) {
     } else {
     	$(description).fadeOut();
     }
+}
+
+function changeWidth(e){
+	var projectID= $('#project').val();
+
+	$(projectID).animate({
+		width: $('#width').val()
+	});
+	var newText = $('#description').val();
+	$(projectID + " .project-description").text(newText);
 }
